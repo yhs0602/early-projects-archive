@@ -1,0 +1,36 @@
+# Project: Adventure
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o Gui.o GuiButton.o $(RES)
+LINKOBJ  = main.o Gui.o GuiButton.o $(RES)
+LIBS =  -L"lib" -mwindows  -lgmon -pg  
+INCS =  -I"include" 
+CXXINCS =  -I"lib/gcc/mingw32/3.4.2/include"  -I"include/c++/3.4.2/backward"  -I"include/c++/3.4.2/mingw32"  -I"include/c++/3.4.2"  -I"include" 
+BIN  = Adventure.exe
+CXXFLAGS = $(CXXINCS)   -w -fexpensive-optimizations -pg
+CFLAGS = $(INCS)   -w -fexpensive-optimizations -pg
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Adventure.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Adventure.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Gui.o: Gui.cpp
+	$(CPP) -c Gui.cpp -o Gui.o $(CXXFLAGS)
+
+GuiButton.o: GuiButton.cpp
+	$(CPP) -c GuiButton.cpp -o GuiButton.o $(CXXFLAGS)

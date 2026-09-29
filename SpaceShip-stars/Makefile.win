@@ -1,0 +1,43 @@
+# Project: Call Of Dduty
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = camera.o NeHeGL.o PlayerController.o main.o GLutil.o fps2.o
+LINKOBJ  = camera.o NeHeGL.o PlayerController.o main.o GLutil.o fps2.o
+LIBS     = -L"D:/양현서/CODE/Dev-Cpp/MinGW64/lib" -L"D:/양현서/CODE/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -mwindows -lopengl32 -lglu32  -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -luuid -lodbc32 -lodbccp32 -g3
+INCS     = -I"D:/양현서/CODE/Dev-Cpp/MinGW64/include" -I"D:/양현서/CODE/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/양현서/CODE/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/양현서/CODE/Dev-Cpp/MinGW64/include" -I"D:/양현서/CODE/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/양현서/CODE/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/양현서/CODE/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "Call Of Dduty.exe"
+CXXFLAGS = $(CXXINCS) -Og -g3
+CFLAGS   = $(INCS) -Og -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+camera.o: camera.cpp
+	$(CPP) -c camera.cpp -o camera.o $(CXXFLAGS)
+
+NeHeGL.o: NeHeGL.cpp
+	$(CPP) -c NeHeGL.cpp -o NeHeGL.o $(CXXFLAGS)
+
+PlayerController.o: PlayerController.cpp
+	$(CPP) -c PlayerController.cpp -o PlayerController.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+GLutil.o: GLutil.cpp
+	$(CPP) -c GLutil.cpp -o GLutil.o $(CXXFLAGS)
+
+fps2.o: fps2.cpp
+	$(CPP) -c fps2.cpp -o fps2.o $(CXXFLAGS)

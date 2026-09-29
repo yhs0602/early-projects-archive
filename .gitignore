@@ -1,0 +1,59 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor temporary files
+*~
+*.swp
+*.swo
+*.tmp
+
+# Build outputs
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.out
+*.res
+*.pdb
+*.ilk
+*.idb
+*.pch
+*.aps
+
+# Dev-C++ generated files
+*.layout
+*.depend
+
+# Visual Studio generated files
+.vs/
+**/Debug/
+**/Release/
+**/ipch/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.ncb
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.VC.opendb
+
+# Logs
+*.log
+
+# Static archives (*.a) are intentionally kept in Git.
+
+# macOS metadata sidecars and generated IDE/compiler artifacts
+._*
+*.gch
+*.opt
+
+# macOS metadata sidecars and generated IDE/compiler artifacts
+._*
+*.gch
+*.opt
